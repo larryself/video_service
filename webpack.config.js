@@ -18,7 +18,7 @@ const config = {
     },
     devServer: {
         historyApiFallback: true,
-        contentBase: path.resolve(__dirname,'dist'),
+        contentBase: path.resolve(__dirname, 'dist'),
         open: true,
         compress: true,
         hot: true,
@@ -33,9 +33,9 @@ const config = {
             },
             {
                 test: /\.css$/,
-                use: [MiniCssExtractPlugin.loader, "css-loader","postcss-loader"],
+                use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
             },
-                     {
+            {
                 test: /\.s[ac]ss$/,
                 use: [
                     MiniCssExtractPlugin.loader,
@@ -68,8 +68,9 @@ const config = {
             filename: `./css/${filename('css')}`
         }),
         new CopyPlugin({
-            patterns:[
-                {from: path.resolve(__dirname, 'src/assets'), to: path.resolve(__dirname, 'dist')}
+            patterns: [
+                {from: path.resolve(__dirname, 'src/assets'), to: path.resolve(__dirname, 'dist')},
+                {from: path.resolve(__dirname, 'src/img'), to: path.resolve(__dirname, 'dist/img')}
             ]
         }),
 
