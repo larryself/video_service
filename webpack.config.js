@@ -14,7 +14,7 @@ const config = {
         path: path.resolve(__dirname, 'dist'),
         filename: `./js/${filename('js')}`,
         publicPath: "",
-        assetModuleFilename: '[path]/[name][ext]',
+        assetModuleFilename: '[path][name][ext]',
     },
     devServer: {
         historyApiFallback: true,
@@ -65,7 +65,7 @@ const config = {
         }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
-            filename: `./css/${filename('css')}`
+            filename: `${filename('css')}`
         }),
         new CopyPlugin({
             patterns: [

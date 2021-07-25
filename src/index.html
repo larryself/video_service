@@ -25,13 +25,18 @@
                 </form>
             </section>
             <div class="header-login">
-                <form action="/" class="form-change-name">
+                <form action="/" class="header-login__form-change-name js-form-change-name">
                     <label class="sr-only" for="change">Изменить имя</label>
-                    <input class="user-name-change js-change-name" id="change" name="change" required type="text">
+                    <input class="header-login__form-input js-change-name-input" id="change" name="change" required
+                           type="text">
                 </form>
-                <span class="user-name"></span>
-                <button class="login-enter btn__active btn btn__red js-login-modal" type="button">Войти</button>
-                <button class="login-exit btn__exit btn btn__white js-logguot" type="button">Выйти</button>
+                <span class="header-login__user-name js-user-name"></span>
+                <button class="header-login__btn header-login__btn-enter  header-login__btn_active header-login__btn_red js-login-modal"
+                        type="button">Войти
+                </button>
+                <button class="header-login__btn header-login__btn-exit   header-login__btn_white js-logguot"
+                        type="button">Выйти
+                </button>
             </div>
         </div>
     </div>
@@ -209,7 +214,8 @@
                     </div>
                 </li>
                 <li class="tv-content__item">
-                    <div class="tv-content__logo"><img alt="AMEDIA PREMIUM" class="tv-content__img" src="img/amedia.png"></div>
+                    <div class="tv-content__logo"><img alt="AMEDIA PREMIUM" class="tv-content__img"
+                                                       src="img/amedia.png"></div>
                     <div class="tv-description">
                         <h4 class="tv-description__title">AMEDIA PREMIUM</h4>
                         <ul class="tv-program">
@@ -291,19 +297,19 @@
 </footer>
 <section class="modal js-modal-window">
     <div class="modal-login">
-        <h2 class="modal-title">Вход</h2>
-        <form action="#" class="modal-form js-modal-form">
+        <h2 class="modal-login_title">Вход</h2>
+        <form action="#" class="modal-login__form js-modal-form">
             <label class="sr-only" for="login-name">Логин</label>
-            <input class="modal-form__input js-form js-form-login" id="login-name" name="login-name" placeholder="Логин"
+            <input class="modal-login__form-input js-form-login" id="login-name" name="login-name" placeholder="Логин"
                    required
                    type="text">
             <label class="modal-form__label_sr-only  sr-only" for="login-password">Пароль</label>
-            <input autocomplete="on" class="modal-form__input js-form-password" id="login-password"
+            <input autocomplete="on" class="modal-login__form-input js-form-password" id="login-password"
                    name="login-password"
                    placeholder="Пароль" required type="password">
-            <input checked class="modal-form__checkbox js-form-checkbox" id="checkbox" type="checkbox">
-            <label class="modal-form__label-checkbox" for="checkbox">Запомнить</label>
-            <button class="modal-form__btn btn btn__red js-form-btn" type="submit">Войти</button>
+            <input checked class="modal-login__form-checkbox js-form-checkbox" id="checkbox" type="checkbox">
+            <label class="modal-login__form-checkbox-label" for="checkbox">Запомнить</label>
+            <button class="modal-login__form-btn modal-login__form-btn_red js-form-btn" type="submit">Войти</button>
         </form>
     </div>
 </section>

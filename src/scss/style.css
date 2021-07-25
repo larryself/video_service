@@ -10,6 +10,9 @@
   margin: 0;
   font-family: "Rubik", sans-serif;
 }
+.page-body_not-overflow {
+  overflow: hidden;
+}
 
 .sr-only {
   position: absolute;
@@ -20,17 +23,6 @@
   overflow: hidden;
   white-space: nowrap;
 }
-
-.btn {
-  cursor: pointer;
-  padding: 9px 32px;
-  transition: .2s;
-  font-size: 16px;
-  font-weight: 500;
-  border-radius: 4px;
-  border: none;
-}
-
 
 /*    Header   */
 .page-header {
@@ -149,7 +141,7 @@
   align-items: flex-end;
 }
 
-.user-name-change {
+.header-login__form-input {
   display: none;
   outline: none;
   border: none;
@@ -161,20 +153,27 @@
   text-align: right;
 }
 
-.login-enter, .login-exit {
+.header-login__btn {
   display: none;
+  cursor: pointer;
+  padding: 9px 32px;
+  transition: .2s;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 4px;
+  border: none;
 }
 
 .btn__active {
   display: block;
 }
 
-.btn__exit {
+.header-login__btn-exit {
   padding-left: 17px;
   padding-right: 0;
 }
 
-.user-name {
+.header-login__user-name {
   display: none;
   align-self: center;
   font-weight: 500;
@@ -183,17 +182,17 @@
   padding-top: 4px;
   overflow: hidden;
 }
-
-.btn__red {
+header-login__btn_red {
   background: #E5261E;
   color: #fff;
 }
-
-.btn__red:hover {
+header-login__btn_red:hover {
   background: #CC221B;
 }
 
-.btn__white {
+
+
+.header-login__btn_white {
   color: #E5261E;
   background: #fff;
 }
@@ -541,13 +540,13 @@
   flex-direction: column;
 }
 
-.modal-title {
+.modal-login_title {
   font-weight: 500;
   font-size: 28px;
   margin-bottom: 17px;
 }
 
-.modal-form {
+.modal-login_form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -556,7 +555,7 @@
   width: 100%;
 }
 
-.modal-form__input {
+.modal-login__form-input {
   outline: none;
   border: none;
   border-bottom: 1px solid #333333;
@@ -565,29 +564,29 @@
   margin-bottom: 17px;
 }
 
-.modal-form__input::placeholder {
+.modal-login__form-input::placeholder {
   font-weight: normal;
   font-size: 16px;
 }
 
-.modal-form__label-checkbox {
+.modal-login__form-checkbox-label {
   align-self: flex-start;
   font-weight: normal;
   font-size: 16px;
 }
 
-.modal-form__checkbox {
+.modal-login__form-checkbox {
   display: none;
 }
 
-.modal-form__label-checkbox {
+.modal-login__form-checkbox-label {
   cursor: pointer;
   position: relative;
   padding-left: 24px;
   margin-top: 6px;
 }
 
-.modal-form__label-checkbox:before {
+.modal-login__form-checkbox-label:before {
   content: "";
   position: absolute;
   display: block;
@@ -598,24 +597,35 @@
   left: 0;
 }
 
-.modal-form__checkbox:checked + .modal-form__label-checkbox:before {
+.modal-login__form-checkbox-label:checked + .modal-login__form-checkbox-label:before {
   background: url('../img/checked.png') no-repeat 0 50%;
   background-size: contain;
 }
 
-.modal-form__btn {
+.modal-login__form-btn {
   margin-top: 110px;
+  cursor: pointer;
+  padding: 9px 32px;
+  transition: .2s;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 4px;
+  border: none;
 }
 
-.modal-error {
-  border-color: red;
+.modal-login__form-btn_red {
+  background: #E5261E;
+  color: #fff;
 }
 
-.active {
+.modal-login__form-btn_red:hover {
+  background: #CC221B;
+}
+
+.active,.modal_active,.header-login__user-name_active. .header-login__form-input_active {
   display: flex;
 }
 
 .modal-open {
   overflow: hidden;
 }
-

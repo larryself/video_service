@@ -31,7 +31,6 @@ formChangeName.addEventListener('submit', e => {
   const changeNameInput = document.querySelector('.js-change-name');
   userName.textContent = changeNameInput.value;
   changeNameInput.classList.remove('active');
-  formChangeName.focus();
   userName.classList.add('active');
   formChangeName.reset();
 });
