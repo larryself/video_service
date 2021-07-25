@@ -18,15 +18,15 @@
             </a>
             <section class="header-search">
                 <form action="#" class="header-search__form" method="get">
-                    <label class="sr-only" for="search">Поиск
+                    <label class="header-search__label_sr-only" for="search">Поиск
                     </label>
-                    <input class="search-form__input" id="search" name="search" placeholder="Поиск..." type="text">
-                    <button class="search-form__btn" type="submit">Найти</button>
+                    <input class="header-search__input" id="search" name="search" placeholder="Поиск..." type="text">
+                    <button class="header-search__btn" type="submit">Найти</button>
                 </form>
             </section>
             <div class="header-login">
                 <form action="/" class="header-login__form-change-name js-form-change-name">
-                    <label class="sr-only" for="change">Изменить имя</label>
+                    <label class="header-login__label_sr-only" for="change">Изменить имя</label>
                     <input class="header-login__form-input js-change-name-input" id="change" name="change" required
                            type="text">
                 </form>
@@ -44,7 +44,7 @@
 <main class="page-content">
     <div class="container">
         <ul class="main-nav">
-            <li class="main-nav__item  active-tabs js-tabs" data-trigger="films">
+            <li class="main-nav__item main-nav__item_active js-tabs" data-trigger="films">
                 <a class="main-nav__link" href="#">
                     <h2 class="main-nav__title">
                         Фильмы</h2>
@@ -56,8 +56,8 @@
                 </a>
             </li>
         </ul>
-        <section class="films active-content" data-content="films">
-            <h3 class="films__title title-new">Новинки</h3>
+        <section class="films main-nav__section_active" data-content="films">
+            <h3 class="films__title films__title_active-img">Новинки</h3>
             <ul class="content-films">
                 <li class="content-films__item">
                     <a class="content-films__item-link" href="#">
@@ -151,7 +151,7 @@
             </ul>
         </section>
         <section class="tv scrollable-container" data-content="tv">
-            <ul class="tv-content scrollable">
+            <ul class="tv__content-list scrollable">
                 <li class="tv-content__item">
                     <div class="tv-content__logo"><img alt="Первый канал" class="tv-content__img" src="img/1st.png">
                     </div>
@@ -299,16 +299,16 @@
     <div class="modal-login">
         <h2 class="modal-login_title">Вход</h2>
         <form action="#" class="modal-login__form js-modal-form">
-            <label class="sr-only" for="login-name">Логин</label>
-            <input class="modal-login__form-input js-form-login" id="login-name" name="login-name" placeholder="Логин"
+            <label class="modal-form__label_sr-only" for="login-name">Логин</label>
+            <input class="modal-login__input js-form-login" id="login-name" name="login-name" placeholder="Логин"
                    required
                    type="text">
-            <label class="modal-form__label_sr-only  sr-only" for="login-password">Пароль</label>
-            <input autocomplete="on" class="modal-login__form-input js-form-password" id="login-password"
+            <label class="modal-form__label_sr-only" for="login-password">Пароль</label>
+            <input autocomplete="on" class="modal-login__input js-form-password" id="login-password"
                    name="login-password"
                    placeholder="Пароль" required type="password">
-            <input checked class="modal-login__form-checkbox js-form-checkbox" id="checkbox" type="checkbox">
-            <label class="modal-login__form-checkbox-label" for="checkbox">Запомнить</label>
+            <input checked class="modal-login__checkbox js-form-checkbox" id="checkbox" type="checkbox">
+            <label class="modal-login__checkbox-label" for="checkbox">Запомнить</label>
             <button class="modal-login__form-btn modal-login__form-btn_red js-form-btn" type="submit">Войти</button>
         </form>
     </div>

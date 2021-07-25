@@ -15,7 +15,7 @@
     overflow: hidden;
 }
 
-.sr-only {
+.header-search__label_sr-only, .header-login__label_sr-only, sr-only {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -88,7 +88,7 @@
 
 }
 
-.header-search__form-input {
+.header-search__input {
     width: 320px;
     border: none;
     padding: 6px 0;
@@ -99,22 +99,22 @@
 }
 
 @media (max-width: 1160px) {
-    .search-form__input {
+    .header-search__input {
         width: 100%;
     }
 
 }
 
-.search-form__input::placeholder {
+.header-search__input::placeholder {
     font-weight: normal;
 }
 
-.search-form__input:focus {
+.header-search__input:focus {
     outline: none;
     font-weight: 500;
 }
 
-.search-form__btn {
+.header-search__btn {
     border: none;
     color: #E5261E;
     background: inherit;
@@ -124,12 +124,12 @@
     cursor: pointer;
 }
 
-.search-form__btn:hover {
+.header-search__btn:hover {
     color: #CC221B;
 }
 
 @media (max-width: 1160px) {
-    .search-form__btn {
+    .header-search__btn {
         margin-right: 0;
     }
 
@@ -199,6 +199,10 @@
     background: #fff;
 }
 
+.header-login__user-name_active. .header-login__input_active {
+    display: flex;
+}
+
 /*    main     */
 .page-content {
     flex: 1 0 auto;
@@ -227,12 +231,12 @@
     font-weight: 500;
 }
 
-.active-tabs {
+.main-nav__item_active {
     color: #E5261E;
     position: relative;
 }
 
-.active-tabs:after {
+.main-nav__item_active:after {
     content: "";
     display: block;
     position: relative;
@@ -240,6 +244,10 @@
     height: 2px;
     bottom: -8px;
     background: #E5261E;
+}
+
+.main-nav__section_active {
+    display: block;
 }
 
 .films {
@@ -253,12 +261,12 @@
     padding: 14px 0 16px;
 }
 
-.title-new {
+.films__title_active-img {
     padding-left: 30px;
     position: relative;
 }
 
-.title-new:before {
+.films__title_active-img:before {
     content: "";
     width: 24px;
     height: 24px;
@@ -436,7 +444,7 @@
     padding-top: 23px;
 }
 
-.tv-content {
+.tv__content-list {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -510,9 +518,6 @@
     padding-right: 18px;
 }
 
-.active-content {
-    display: block;
-}
 
 /*    modal    */
 .modal {
@@ -555,7 +560,7 @@
     width: 100%;
 }
 
-.modal-login__form-input {
+.modal-login__input {
     outline: none;
     border: none;
     border-bottom: 1px solid #333333;
@@ -563,30 +568,38 @@
     width: 100%;
     margin-bottom: 17px;
 }
-
-.modal-login__form-input::placeholder {
+.modal-login__label_sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.modal-login__input::placeholder {
     font-weight: normal;
     font-size: 16px;
 }
 
-.modal-login__form-checkbox-label {
+.modal-login__checkbox-label {
     align-self: flex-start;
     font-weight: normal;
     font-size: 16px;
 }
 
-.modal-login__form-checkbox {
+.modal-login__checkbox {
     display: none;
 }
 
-.modal-login__form-checkbox-label {
+.modal-login__checkbox-label {
     cursor: pointer;
     position: relative;
     padding-left: 24px;
     margin-top: 6px;
 }
 
-.modal-login__form-checkbox-label:before {
+.modal-login__checkbox-label:before {
     content: "";
     position: absolute;
     display: block;
@@ -597,12 +610,12 @@
     left: 0;
 }
 
-.modal-login__form-checkbox-label:checked + .modal-login__form-checkbox-label:before {
+.modal-login__checkbox-label:checked + .modal-login__checkbox-label:before {
     background: url('../img/checked.png') no-repeat 0 50%;
     background-size: contain;
 }
 
-.modal-login__form-btn {
+.modal-login__btn {
     margin-top: 110px;
     cursor: pointer;
     padding: 9px 32px;
@@ -613,19 +626,14 @@
     border: none;
 }
 
-.modal-login__form-btn_red {
+.modal-login__btn_red {
     background: #E5261E;
     color: #fff;
 }
 
-.modal-login__form-btn_red:hover {
+.modal-login__btn_red:hover {
     background: #CC221B;
 }
-
-.active, .modal_active, .header-login__user-name_active. .header-login__input_active {
+.modal_active {
     display: flex;
-}
-
-.modal-open {
-    overflow: hidden;
 }

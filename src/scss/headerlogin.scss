@@ -1,0 +1,80 @@
+.header-login {
+  width: 33%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  &__input {
+    display: none;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #333333;
+    padding: 7px 0 7px;
+    width: 100%;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: right;
+
+    &_active {
+      display: flex;
+    }
+  }
+
+  &__btn {
+    display: none;
+    cursor: pointer;
+    padding: 9px 32px;
+    transition: .2s;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 4px;
+    border: none;
+  }
+
+  &__btn_active {
+    display: block;
+  }
+
+  &__btn-exit {
+    padding-left: 17px;
+    padding-right: 0;
+  }
+
+  &__user-name {
+    display: none;
+    align-self: center;
+    font-weight: 500;
+    font-size: 16px;
+    color: #333333;
+    padding-top: 4px;
+    overflow: hidden;
+
+    &_active {
+      display: flex;
+    }
+  }
+
+  &__btn_red {
+    background: #E5261E;
+    color: #fff;
+  }
+
+  &__btn_red:hover {
+    background: #CC221B;
+  }
+
+  &__btn_white {
+    color: #E5261E;
+    background: #fff;
+  }
+
+  &__label_sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,112 @@
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(51, 51, 51, .6);;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+
+  &-login {
+    width: 304px;
+    padding: 36px;
+    background: #ffffff;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    &_title {
+      font-weight: 500;
+      font-size: 28px;
+      margin-bottom: 17px;
+    }
+
+    &_form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-weight: 500;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    &-input {
+      outline: none;
+      border: none;
+      border-bottom: 1px solid #333333;
+      padding: 6px 0;
+      width: 100%;
+      margin-bottom: 17px;
+
+      &::placeholder {
+        font-weight: normal;
+        font-size: 16px;
+      }
+    }
+
+    &__checkbox {
+      display: none;
+
+      &-label {
+        align-self: flex-start;
+        font-weight: normal;
+        font-size: 16px;
+        cursor: pointer;
+        position: relative;
+        padding-left: 24px;
+        margin-top: 6px;
+
+        &:before {
+          content: "";
+          position: absolute;
+          display: block;
+          height: 16px;
+          width: 16px;
+          border-radius: 4px;
+          border: 1px solid #333333;
+          left: 0;
+        }
+      }
+    }
+
+    &-checkbox-label:checked + .modal-login__form-checkbox-label:before {
+      background: url('../img/checked.png') no-repeat 0 50%;
+      background-size: contain;
+    }
+
+    &__form-btn {
+      margin-top: 110px;
+      cursor: pointer;
+      padding: 9px 32px;
+      transition: .2s;
+      font-size: 16px;
+      font-weight: 500;
+      border-radius: 4px;
+      border: none;
+
+      &_red {
+        background: #E5261E;
+        color: #fff;
+
+        &:hover {
+          background: #CC221B;
+        }
+      }
+    }
+  }
+
+  &_active {
+    display: flex;
+  }
+}
+
+
+
+
+
