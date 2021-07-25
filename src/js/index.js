@@ -1,6 +1,4 @@
-const pass = document.querySelector('.js-form-password');
-const btnEnter = document.querySelector('.js-form-btn');
-
+/* modal */
 const btnLogin = document.querySelector('.js-login-modal');
 const page = document.querySelector('.page-body');
 const formModal = document.querySelector('.js-modal-form');
@@ -33,6 +31,7 @@ formChangeName.addEventListener('submit', e => {
   const changeNameInput = document.querySelector('.js-change-name');
   userName.textContent = changeNameInput.value;
   changeNameInput.classList.remove('active');
+  formChangeName.focus();
   userName.classList.add('active');
   formChangeName.reset();
 });
@@ -118,7 +117,7 @@ tabsButton.forEach(tab => {
 
 function openActiveElement(e) {
   const currentContentElem = document.querySelector(
-    `[data-content="${e.target.closest('.js-tabs').dataset.trigger}"]`
+      `[data-content="${e.target.closest('.js-tabs').dataset.trigger}"]`
   );
 
   /* remove */
