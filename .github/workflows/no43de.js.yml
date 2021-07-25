@@ -22,6 +22,6 @@ jobs:
     - run: npm install
     - run: 
     git remote set-url origin git@github.com:larryself/wp.gitt
-    npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
+    npm run build && gh-pages --dist 'build' --branch 'release' --message
   - env:
     GITHUB_TOKEN: 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
