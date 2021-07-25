@@ -7,9 +7,6 @@ const userName = document.querySelector('.js-current-user-name');
 const modalWindow = document.querySelector('.js-modal-window');
 
 const formChangeName = document.querySelector('.js-form-change-name');
-
-
-
 let userKey = 'autorized';
 if (localStorage.getItem(userKey)) {
     const userList = localStorage.getItem(userKey);
@@ -22,7 +19,7 @@ if (localStorage.getItem(userKey)) {
 userName.addEventListener('click', e => {
     const changeNameInput = document.querySelector('.js-change-name-input');
     changeNameInput.value = userName.textContent;
-    changeNameInput.classList.add('header-login__form-input_active');
+    changeNameInput.classList.add('header-login__input_active');
     changeNameInput.focus();
     userName.classList.remove('header-login__user-name_active');
 });
@@ -31,11 +28,11 @@ formChangeName.addEventListener('submit', e => {
     e.preventDefault();
     const changeNameInput = document.querySelector('.js-change-name-input');
     userName.textContent = changeNameInput.value;
-    changeNameInput.classList.remove('header-login__form-input_active');
+    changeNameInput.classList.remove('header-login__input_active');
     userName.classList.add('header-login__user-name_active');
     formChangeName.reset();
 });
-document.querySelector('.js-change-name').addEventListener('blur', () => {
+document.querySelector('.js-change-name-input').addEventListener('blur', () => {
     formChangeName.requestSubmit();
 });
 
@@ -49,8 +46,9 @@ function loginFormOn() {
 
 modalWindow.addEventListener('click', e => {
     if (e.target.classList.contains('modal')) {
-        closeModalWindow();
+        return closeModalWindow();
     }
+    loginFormOn();
 });
 
 btnLoginEnter.addEventListener('click', () => {

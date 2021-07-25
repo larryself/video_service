@@ -447,7 +447,7 @@
 .tv__content-list {
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding-left: 0;
     height: 696px;
     overflow: auto;
 }
