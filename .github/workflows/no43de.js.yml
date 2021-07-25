@@ -21,7 +21,7 @@ jobs:
     - run: npm init
     - run: npm install
     - run: 
-    git remote set-url origin git@github.com:larryself/wp.git
+    git remote set-url origin https://git:larryself@github.com/wp.git
     npm run build -u
   - env:
     GITHUB_TOKEN: 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
