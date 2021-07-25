@@ -1,26 +1,26 @@
 @font-face {
   font-family: "Rubik";
-  src: url(fonts//RubikRegular.eot) format("embedded-opentype"),
-  url(fonts//RubikRegular.woff) format("woff"),
-  url(fonts//RubikRegular.ttf) format("truetype");
+  src: url(fonts/RubikRegular.eot) format("embedded-opentype"),
+  url(fonts/RubikRegular.woff) format("woff"),
+  url(fonts/RubikRegular.ttf) format("truetype");
   font-style: normal;
   font-weight: 400;
 }
 
 @font-face {
   font-family: "Rubik";
-  src: url(fonts//RubikMedium.eot) format("embedded-opentype"),
-  url(fonts//RubikMedium.woff) format("woff"),
-  url(fonts//RubikMedium.ttf) format("truetype");
+  src: url(fonts/RubikMedium.eot) format("embedded-opentype"),
+  url(fonts/RubikMedium.woff) format("woff"),
+  url(fonts/RubikMedium.ttf) format("truetype");
   font-style: normal;
   font-weight: 500;
 }
 
 @font-face {
   font-family: "Rubik";
-  src: url(fonts//RubikBold.eot) format("embedded-opentype"),
-  url(fonts//RubikBold.woff) format("woff"),
-  url(fonts//RubikBold.ttf) format("truetype");
+  src: url(fonts/RubikBold.eot) format("embedded-opentype"),
+  url(fonts/RubikBold.woff) format("woff"),
+  url(fonts/RubikBold.ttf) format("truetype");
   font-style: normal;
   font-weight: 700;
 }
@@ -288,7 +288,7 @@
   content: "";
   width: 24px;
   height: 24px;
-  background: url(img//fier.png), no-repeat;
+  background: url(img/fier.png), no-repeat;
   background-size: cover;
   position: absolute;
   left: 0;
@@ -626,7 +626,7 @@
 }
 
 .modal-form__checkbox:checked + .modal-form__label-checkbox:before {
-  background: url(img//checked.png) no-repeat 0 50%;
+  background: url(img/checked.png) no-repeat 0 50%;
   background-size: contain;
 }
 
