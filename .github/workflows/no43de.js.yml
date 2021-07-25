@@ -20,8 +20,9 @@ jobs:
             node-version: '14'  
     - run: npm init
     - run: npm install
-    - run: 
+- name: Deploy with gh-pages
+  run: |
     git remote set-url origin https://git:larryself@github.com/wp.git
-    npm run build -u
-  - env:
-    GITHUB_TOKEN: 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
+    npx gh-pages -d build -u "github-actions-bot <support+actions@github.com>"
+   env:
+        GITHUB_TOKEN: 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
