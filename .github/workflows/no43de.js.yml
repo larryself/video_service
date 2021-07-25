@@ -1,7 +1,19 @@
+name: CI
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
-- name: Deploy with gh-pages
-  run: |
-    git remote set-url origin https://git:larryself@github.com/wp.git
-    npx gh-pages -d build -u "github-actions-bot <support+actions@github.com>"
-   env:
-        GITHUB_TOKEN: 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
+jobs:
+
+  build:
+   
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+            node-version: '14'
+    - run: npm install
+    - run: npm run prod
