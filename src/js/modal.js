@@ -3,7 +3,7 @@ const btnLoginEnter = document.querySelector('.js-enter-modal');
 const page = document.querySelector('.page-body');
 const formModal = document.querySelector('.js-modal-form');
 const btnExit = document.querySelector('.js-logguot');
-const userName = document.querySelector('.js-user-name');
+const userName = document.querySelector('.js-current-user-name');
 const modalWindow = document.querySelector('.js-modal-window');
 
 const formChangeName = document.querySelector('.js-form-change-name');
@@ -20,7 +20,7 @@ if (localStorage.getItem(userKey)) {
     btnExit.classList.add('header-login__btn_active');
 }
 userName.addEventListener('click', e => {
-    const changeNameInput = document.querySelector('.js-change-name');
+    const changeNameInput = document.querySelector('.js-change-name-input');
     changeNameInput.value = userName.textContent;
     changeNameInput.classList.add('header-login__form-input_active');
     changeNameInput.focus();
@@ -29,7 +29,7 @@ userName.addEventListener('click', e => {
 
 formChangeName.addEventListener('submit', e => {
     e.preventDefault();
-    const changeNameInput = document.querySelector('.js-change-name');
+    const changeNameInput = document.querySelector('.js-change-name-input');
     userName.textContent = changeNameInput.value;
     changeNameInput.classList.remove('header-login__form-input_active');
     userName.classList.add('header-login__user-name_active');

@@ -12,12 +12,12 @@
 <header class="page-header">
     <div class="container">
         <div class="page-header__inner">
-            <a class="logo-link" href="index.html">
+            <a class="page-header__logo-link" href="index.html">
                 <img alt="Логотип Видеосервис" src="img/logo.svg">
-                <h1 class="logo-link__title">Видеосервис</h1>
+                <h1 class="page-header__title">Видеосервис</h1>
             </a>
             <section class="header-search">
-                <form action="#" class="search-form" method="get">
+                <form action="#" class="header-search__form" method="get">
                     <label class="sr-only" for="search">Поиск
                     </label>
                     <input class="search-form__input" id="search" name="search" placeholder="Поиск..." type="text">
@@ -30,7 +30,7 @@
                     <input class="header-login__form-input js-change-name-input" id="change" name="change" required
                            type="text">
                 </form>
-                <span class="header-login__user-name js-user-name"></span>
+                <span class="header-login__user-name js-current-user-name"></span>
                 <button class="header-login__btn header-login__btn-enter  header-login__btn_active header-login__btn_red js-login-modal"
                         type="button">Войти
                 </button>
@@ -44,9 +44,9 @@
 <main class="page-content">
     <div class="container">
         <ul class="main-nav">
-            <li class="main-nav__item  js-tabs" data-trigger="films">
+            <li class="main-nav__item  active-tabs js-tabs" data-trigger="films">
                 <a class="main-nav__link" href="#">
-                    <h2 class="main-nav__title  active-tabs">
+                    <h2 class="main-nav__title">
                         Фильмы</h2>
                 </a>
             </li>

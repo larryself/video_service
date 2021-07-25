@@ -37,7 +37,7 @@
     flex-wrap: wrap;
 }
 
-.logo-link {
+.page-header__logo-link {
     width: 33%;
     display: flex;
     text-decoration: none;
@@ -45,7 +45,7 @@
     align-items: center;
 }
 
-.logo-link__title {
+.page-header__title {
     font-size: 20px;
     line-height: 20px;
     font-weight: 500;
@@ -54,7 +54,7 @@
 }
 
 @media (max-width: 600px) {
-    .logo-link__title {
+    .page-header__title {
         overflow: hidden;
         height: 1px;
         width: 1px;
@@ -74,7 +74,7 @@
     }
 }
 
-.search-form {
+.header-search__form {
     width: 100%;
     display: flex;
     align-items: center;
@@ -82,13 +82,13 @@
 }
 
 @media (max-width: 1160px) {
-    .search-form {
+    .header-search__form {
         justify-content: center;
     }
 
 }
 
-.search-form__input {
+.header-search__form-input {
     width: 320px;
     border: none;
     padding: 6px 0;
@@ -142,7 +142,7 @@
     align-items: flex-end;
 }
 
-.header-login__form-input {
+.header-login__input {
     display: none;
     outline: none;
     border: none;
@@ -165,7 +165,7 @@
     border: none;
 }
 
-.btn__active {
+.header-login__btn_active {
     display: block;
 }
 
@@ -184,12 +184,12 @@
     overflow: hidden;
 }
 
-header-login__btn_red {
+.header-login__btn_red {
     background: #E5261E;
     color: #fff;
 }
 
-header-login__btn_red:hover {
+.header-login__btn_red:hover {
     background: #CC221B;
 }
 
@@ -517,7 +517,6 @@ header-login__btn_red:hover {
 /*    modal    */
 .modal {
     display: none;
-    height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
@@ -531,7 +530,6 @@ header-login__btn_red:hover {
 }
 
 .modal-login {
-    display: none;
     width: 304px;
     padding: 36px;
     background: #ffffff;
@@ -624,7 +622,7 @@ header-login__btn_red:hover {
     background: #CC221B;
 }
 
-.active, .modal_active, .header-login__user-name_active. .header-login__form-input_active {
+.active, .modal_active, .header-login__user-name_active. .header-login__input_active {
     display: flex;
 }
 
