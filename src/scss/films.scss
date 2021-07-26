@@ -64,6 +64,7 @@
 
       & .films__desc {
         opacity: 0.8;
+        transition: 0.2s all;
       }
     }
   }
@@ -88,7 +89,6 @@
     font-size: 16px;
     line-height: 1.4;
     opacity: 0;
-    transition: 0.2s all;
   }
 
   &__name {
