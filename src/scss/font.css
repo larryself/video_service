@@ -5,6 +5,7 @@
   url("../fonts/RubikRegular.ttf") format("truetype");
   font-style: normal;
   font-weight: 400;
+  font-display: block;
 }
 
 @font-face {
@@ -14,6 +15,7 @@
   url("../fonts/RubikMedium.ttf") format("truetype");
   font-style: normal;
   font-weight: 500;
+  font-display: block;
 }
 
 @font-face {
@@ -23,4 +25,5 @@
   url("../fonts/RubikBold.ttf") format("truetype");
   font-style: normal;
   font-weight: 700;
+  font-display: block;
 }

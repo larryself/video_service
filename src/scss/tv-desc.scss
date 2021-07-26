@@ -1,0 +1,29 @@
+.tv-desc {
+  padding: 21px 0 19px 0;
+  @media (max-width: 1160px) {
+    width: 100%;
+    padding-left: 21px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 20px;
+    padding-bottom: 5px;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__item {
+    padding-top: 12px;
+    &:first-child {
+      color: #E5261E;
+    }
+  }
+
+  &__time {
+    padding-right: 18px;
+  }
+}
