@@ -1,5 +1,5 @@
 import './scss/main.scss';
-import './js/modal';
+import './js/auth';
 import './js/tabs';
 
 

@@ -3,7 +3,9 @@
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-
+  @media (max-width: 600px) {
+    width: 60%;
+  }
   &__input {
     display: none;
     outline: none;
@@ -17,6 +19,7 @@
 
     &_active {
       display: flex;
+
     }
   }
 
@@ -49,7 +52,9 @@
     overflow: hidden;
 
     &_active {
-      display: flex;
+      display: block;
+      text-overflow: ellipsis;
+      white-space:nowrap;
     }
   }
 

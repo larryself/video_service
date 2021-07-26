@@ -28,15 +28,15 @@
     @media (max-width: 1160px) {
       width: 100%;
     }
+  }
 
-    &::placeholder {
-      font-weight: normal;
-    }
+  &__input::placeholder {
+    font-weight: normal;
+  }
 
-    &:focus {
-      outline: none;
-      font-weight: 500;
-    }
+  &__input:focus {
+    outline: none;
+    font-weight: 500;
   }
 
   &__btn {
@@ -47,15 +47,19 @@
     padding: 10px 32px;
     font-weight: 500;
     cursor: pointer;
-
-    &:hover {
-      color: #CC221B;
+    @media (max-width: 800px) {
+      margin-right: 0;
+      padding-right: 0;
     }
+  }
 
+  &__btn:hover {
+    color: #CC221B;
     @media (max-width: 1160px) {
       margin-right: 0;
     }
   }
+
   &__label_sr-only {
     position: absolute;
     width: 1px;
