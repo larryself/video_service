@@ -10,6 +10,12 @@ Install dependencies first:
 npm i
 ```
 
+To get development build to `dist/` folder:
+
+```
+npm run dev
+```
+
 Then start `webpack-dev-server` via:
 
 ```
