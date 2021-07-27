@@ -5,7 +5,6 @@ if (window.location.hash) {
     const triggerElement = elem.slice(1);
     openActiveElement(triggerElement);
 }
-
 const tabsButton = document.querySelectorAll('.js-tabs');
 tabsButton.forEach(tab => {
     tab.addEventListener('click', (e) => {
