@@ -1,16 +1,17 @@
 
 
 if (window.location.hash) {
-    const elem = window.location.hash
-    const triggerElement = elem.slice(1)
+    const elem = window.location.hash;
+    const triggerElement = elem.slice(1);
     openActiveElement(triggerElement);
 }
-/*   tabs */
+
 const tabsButton = document.querySelectorAll('.js-tabs');
 tabsButton.forEach(tab => {
     tab.addEventListener('click', (e) => {
         e.preventDefault();
-        openActiveElement(e = e.target.closest('.js-tabs').dataset.trigger);
+        const currentTrigger = e.target.closest('.js-tabs').dataset.trigger;
+        openActiveElement(currentTrigger);
     });
 });
 

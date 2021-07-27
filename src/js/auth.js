@@ -1,4 +1,4 @@
-/* modal */
+
 const btnLoginEnter = document.querySelector('.js-enter-modal');
 const page = document.querySelector('.page-body');
 const formModal = document.querySelector('.js-modal-form');
@@ -11,10 +11,7 @@ let userKey = 'autorized';
 if (localStorage.getItem(userKey)) {
     const userList = localStorage.getItem(userKey);
     const returnUserList = JSON.parse(userList);
-    authorizedAndChanegeNAme();
-    userName.textContent = returnUserList.user;
-    btnLoginEnter.classList.remove('header-login__btn_active');
-    btnExit.classList.add('header-login__btn_active');
+    authorize(returnUserList.user);
 }
 userName.addEventListener('click', e => {
     const changeNameInput = document.querySelector('.js-change-name-input');
@@ -27,6 +24,7 @@ userName.addEventListener('click', e => {
 formChangeName.addEventListener('submit', e => {
     e.preventDefault();
     const changeNameInput = document.querySelector('.js-change-name-input');
+    saveToLocalStorage(changeNameInput.value)
     userName.textContent = changeNameInput.value;
     changeNameInput.classList.remove('header-login__input_active');
     userName.classList.add('header-login__user-name_active');
@@ -67,11 +65,11 @@ function authorization() {
     if (checkbox.checked) {
         saveToLocalStorage(loginValue);
     }
-    authorizedAndChanegeNAme(loginValue);
+    authorize(loginValue);
     closeModalWindow();
 }
 
-function authorizedAndChanegeNAme(user) {
+function authorize(user) {
     userName.textContent = user;
     userName.classList.add('header-login__user-name_active');
     btnLoginEnter.classList.remove('header-login__btn_active');
@@ -91,7 +89,7 @@ btnExit.addEventListener('click', () => {
     btnExit.classList.remove('header-login__btn_active');
     btnLoginEnter.classList.add('header-login__btn_active');
     localStorage.clear();
-    userName.innerHTML = localStorage.getItem('loginName');
+    userName.innerHTML ='';
 });
 
 function closeModalWindow() {
