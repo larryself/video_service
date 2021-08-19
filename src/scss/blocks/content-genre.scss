@@ -79,7 +79,9 @@
       bottom: 24px;
       font-weight: normal;
       font-size: 20px;
-      color: #fff
+      color: #fff;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 }
