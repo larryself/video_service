@@ -10,9 +10,6 @@
   padding-right: 10px;
 }
 
-
-
-
 /*IE*/
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .scrollable__elem {
@@ -23,26 +20,25 @@
     padding-bottom: 32px;
 
     /* ie scrollbar color properties */
-    scrollbar-base-color: #F2F2f2;
-    scrollbar-face-color: #BDBDBD;
-    scrollbar-3dlight-color: #BDBDBD;
-    scrollbar-highlight-color: #BDBDBD;
-    scrollbar-track-color: #F2F2f2;
-    scrollbar-arrow-color: #BDBDBD;
-    scrollbar-shadow-color: #BDBDBD;
-    scrollbar-dark-shadow-color: #BDBDBD;
+    scrollbar-base-color: #f2f2f2;
+    scrollbar-face-color: #bdbdbd;
+    scrollbar-3dlight-color: #bdbdbd;
+    scrollbar-highlight-color: #bdbdbd;
+    scrollbar-track-color: #f2f2f2;
+    scrollbar-arrow-color: #bdbdbd;
+    scrollbar-shadow-color: #bdbdbd;
+    scrollbar-dark-shadow-color: #bdbdbd;
   }
 
   .scrollable__elem:after {
-    content: "";
+    content: '';
     height: 32px;
     display: block;
   }
-
 }
 
 /*Edge*/
-@supports (-ms-ime-align:auto) {
+@supports (-ms-ime-align: auto) {
   .scrollable__elem {
     margin-right: -10px;
     padding-top: 16px;
@@ -52,7 +48,7 @@
   }
 
   .scrollable__elem:after {
-    content: "";
+    content: '';
     height: 16px;
     display: block;
   }
@@ -62,18 +58,17 @@
 /*From version 64 - https://drafts.csswg.org/css-scrollbars-1/*/
 .scrollable__elem {
   scrollbar-width: thin;
-  scrollbar-color: #BDBDBD #F2f2f2;
+  scrollbar-color: #bdbdbd #f2f2f2;
 }
-
 
 /*Chrome*/
 .scrollable__elem::-webkit-scrollbar-track {
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
   width: 4px;
 }
 
 .scrollable__elem::-webkit-scrollbar-thumb {
-  background-color: #BDBDBD;
+  background-color: #bdbdbd;
   border: 1px solid transparent;
   background-clip: content-box;
   border-radius: 7px;
