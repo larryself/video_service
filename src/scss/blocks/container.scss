@@ -4,9 +4,11 @@
   padding: 0 15px;
   margin: 0 auto;
   box-sizing: border-box;
+
   @media (max-width: 1160px) {
     max-width: 750px;
   }
+
   @media (max-width: 767px) {
     max-width: none;
   }

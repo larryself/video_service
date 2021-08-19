@@ -1,5 +1,6 @@
 .tv-desc {
-  padding: 21px 0 19px 0;
+  padding: 21px 0 19px;
+
   @media (max-width: 1160px) {
     width: 100%;
     padding-left: 21px;
@@ -18,9 +19,10 @@
 
   &__item {
     padding-top: 12px;
-    &:first-child {
-      color: #E5261E;
-    }
+  }
+
+  &__item:first-child {
+    color: #e5261e;
   }
 
   &__time {

@@ -2,7 +2,6 @@
   display: none;
   padding-top: 23px;
 
-
   &__list {
     list-style: none;
     margin: 0;
@@ -13,29 +12,29 @@
 
   &__item {
     display: flex;
-    background: #F2F2F2;
+    background: #f2f2f2;
     border-radius: 8px;
     margin-bottom: 16px;
+
     @media (max-width: 1160px) {
       justify-content: center;
       flex-wrap: wrap;
     }
-
-    &:last-child {
-      margin-bottom: 0;
-    }
   }
+
+  &__item:last-child {
+    margin-bottom: 0;
+  }
+
   &__logo {
     width: 33.9%;
     display: flex;
     align-items: center;
     justify-content: center;
+
     @media (max-width: 1160px) {
       padding-top: 20px;
       padding-bottom: 20px;
     }
   }
 }
-
-
-

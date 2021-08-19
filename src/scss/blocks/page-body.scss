@@ -3,9 +3,9 @@
   flex-direction: column;
   height: 100%;
   margin: 0;
-  font-family: "Rubik", sans-serif;
-}
+  font-family: 'Rubik', sans-serif;
 
-.page-body_not-overflow {
-  overflow: hidden;
+  &_not-overflow {
+    overflow: hidden;
+  }
 }

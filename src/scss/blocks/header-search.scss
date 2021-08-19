@@ -2,6 +2,7 @@
   width: 34%;
   display: flex;
   align-items: center;
+
   @media (max-width: 1160px) {
     order: 1;
     width: 100%;
@@ -12,6 +13,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     @media (max-width: 1160px) {
       justify-content: center;
     }
@@ -19,12 +21,13 @@
 
   &__input {
     width: 320px;
-    border: none;
+    border: 0;
     padding: 6px 0;
-    border-bottom: 1px solid #333333;
+    border-bottom: 1px solid #333;
     font-weight: 500;
     font-size: 16px;
     line-height: 19px;
+
     @media (max-width: 1160px) {
       width: 100%;
     }
@@ -40,13 +43,14 @@
   }
 
   &__btn {
-    border: none;
-    color: #E5261E;
+    border: 0;
+    color: #e5261e;
     background: transparent;
     margin-right: -32px;
     padding: 10px 32px;
     font-weight: 500;
     cursor: pointer;
+
     @media (max-width: 800px) {
       margin-right: 0;
       padding-right: 0;
@@ -54,7 +58,8 @@
   }
 
   &__btn:hover {
-    color: #CC221B;
+    color: #cc221b;
+
     @media (max-width: 1160px) {
       margin-right: 0;
     }
