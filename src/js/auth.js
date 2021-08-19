@@ -1,98 +1,101 @@
-
 const btnLoginEnter = document.querySelector('.js-enter-modal');
 const page = document.querySelector('.page-body');
 const formModal = document.querySelector('.js-modal-form');
 const btnExit = document.querySelector('.js-logguot');
 const userName = document.querySelector('.js-current-user-name');
 const modalWindow = document.querySelector('.js-modal-window');
-
 const formChangeName = document.querySelector('.js-form-change-name');
-let userKey = 'autorized';
-if (localStorage.getItem(userKey)) {
-    const userList = localStorage.getItem(userKey);
-    const returnUserList = JSON.parse(userList);
-    authorize(returnUserList.user);
-}
-userName.addEventListener('click', e => {
-    const changeNameInput = document.querySelector('.js-change-name-input');
-    changeNameInput.value = userName.textContent;
-    changeNameInput.classList.add('header-login__input_active');
-    changeNameInput.focus();
-    userName.classList.remove('header-login__user-name_active');
+const userKey = 'autorized';
+
+userName.addEventListener('click', () => {
+  const changeNameInput = document.querySelector('.js-change-name-input');
+  changeNameInput.value = userName.textContent;
+  changeNameInput.classList.add('header-login__input_active');
+  changeNameInput.focus();
+  userName.classList.remove('header-login__user-name_active');
 });
 
-formChangeName.addEventListener('submit', e => {
-    e.preventDefault();
-    const changeNameInput = document.querySelector('.js-change-name-input');
-    saveToLocalStorage(changeNameInput.value)
-    userName.textContent = changeNameInput.value;
-    changeNameInput.classList.remove('header-login__input_active');
-    userName.classList.add('header-login__user-name_active');
-    formChangeName.reset();
+function saveToLocalStorage(user) {
+  const userObj = {
+    authorized: true,
+    user,
+  };
+  JSON.stringify(userObj);
+  localStorage.setItem(userKey, JSON.stringify(userObj));
+}
+
+formChangeName.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const changeNameInput = document.querySelector('.js-change-name-input');
+  saveToLocalStorage(changeNameInput.value);
+  userName.textContent = changeNameInput.value;
+  changeNameInput.classList.remove('header-login__input_active');
+  userName.classList.add('header-login__user-name_active');
+  formChangeName.reset();
 });
+
 document.querySelector('.js-change-name-input').addEventListener('blur', () => {
-    formChangeName.requestSubmit();
+  formChangeName.requestSubmit();
 });
 
 function loginFormOn() {
-    if (modalWindow.matches('.modal_active')) {
-        return;
-    }
-    modalWindow.classList.add('modal_active');
-    page.classList.add('page-body_not-overflow');
+  if (modalWindow.matches('.modal_active')) {
+    return;
+  }
+  modalWindow.classList.add('modal_active');
+  page.classList.add('page-body_not-overflow');
 }
 
-modalWindow.addEventListener('click', e => {
-    if (e.target.classList.contains('modal')) {
-        return closeModalWindow();
-    }
+function closeModalWindow() {
+  modalWindow.classList.remove('modal_active');
+  page.classList.remove('page-body_not-overflow');
+}
+
+modalWindow.addEventListener('click', (e) => {
+  if (e.target.classList.contains('modal')) {
+    closeModalWindow();
+  } else {
     loginFormOn();
+  }
 });
 
 btnLoginEnter.addEventListener('click', () => {
-    loginFormOn();
+  loginFormOn();
 });
-formModal.addEventListener('submit', e => {
-    e.preventDefault();
-    authorization();
-    formModal.reset();
-});
-
-function authorization() {
-    const loginInput = document.querySelector('.js-form-login');
-    const loginValue = loginInput.value;
-    const checkbox = document.querySelector('.js-form-checkbox');
-    if (checkbox.checked) {
-        saveToLocalStorage(loginValue);
-    }
-    authorize(loginValue);
-    closeModalWindow();
-}
 
 function authorize(user) {
-    userName.textContent = user;
-    userName.classList.add('header-login__user-name_active');
-    btnLoginEnter.classList.remove('header-login__btn_active');
-    btnExit.classList.add('header-login__btn_active');
+  userName.textContent = user;
+  userName.classList.add('header-login__user-name_active');
+  btnLoginEnter.classList.remove('header-login__btn_active');
+  btnExit.classList.add('header-login__btn_active');
 }
 
-function saveToLocalStorage(user) {
-    let userObj = {
-        authorized: true,
-        user: user
-    };
-    JSON.stringify(userObj);
-    localStorage.setItem(userKey, JSON.stringify(userObj));
+if (localStorage.getItem(userKey)) {
+  const userList = localStorage.getItem(userKey);
+  const returnUserList = JSON.parse(userList);
+  authorize(returnUserList.user);
 }
 
-btnExit.addEventListener('click', () => {
-    btnExit.classList.remove('header-login__btn_active');
-    btnLoginEnter.classList.add('header-login__btn_active');
-    localStorage.clear();
-    userName.innerHTML ='';
+function authorization() {
+  const loginInput = document.querySelector('.js-form-login');
+  const loginValue = loginInput.value;
+  const checkbox = document.querySelector('.js-form-checkbox');
+  if (checkbox.checked) {
+    saveToLocalStorage(loginValue);
+  }
+  authorize(loginValue);
+  closeModalWindow();
+}
+
+formModal.addEventListener('submit', (e) => {
+  e.preventDefault();
+  authorization();
+  formModal.reset();
 });
 
-function closeModalWindow() {
-    modalWindow.classList.remove('modal_active');
-    page.classList.remove('page-body_not-overflow');
-}
+btnExit.addEventListener('click', () => {
+  btnExit.classList.remove('header-login__btn_active');
+  btnLoginEnter.classList.add('header-login__btn_active');
+  localStorage.clear();
+  userName.innerHTML = '';
+});
