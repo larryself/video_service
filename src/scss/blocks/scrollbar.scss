@@ -50,12 +50,12 @@
     scrollbar-arrow-color: #bdbdbd;
     scrollbar-shadow-color: #bdbdbd;
     scrollbar-dark-shadow-color: #bdbdbd;
-  }
 
-  &::after {
-    content: '';
-    height: 32px;
-    display: block;
+    &::after {
+      content: '';
+      height: 32px;
+      display: block;
+    }
   }
 }
 
@@ -67,11 +67,11 @@
     margin-top: -16px;
     margin-bottom: -16px;
     padding-bottom: 16px;
-  }
 
-  &::after {
-    content: '';
-    height: 16px;
-    display: block;
+    &::after {
+      content: '';
+      height: 16px;
+      display: block;
+    }
   }
 }
