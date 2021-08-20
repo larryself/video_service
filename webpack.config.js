@@ -1,16 +1,23 @@
-const webpack = require('webpack')
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const CopyPlugin = require('copy-webpack-plugin')
-const ESLintPlugin = require('eslint-webpack-plugin')
+const webpack = require('webpack');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const PrettierPlugin = require('prettier-webpack-plugin');
+const imageminMozjpeg = require('imagemin-mozjpeg');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
-const filename = (ext) => `[name].[contenthash].${ext}`
+const filename = (ext) => `[name].[contenthash].${ext}`;
 
-const config = {
+const lintPlugin = (isDev) => isDev ? [] : [new ESLintPlugin({ extensions: ['js'] }),
+  new StyleLintPlugin({ extensions: ['css', 'scss'] }),
+  new PrettierPlugin(),];
+
+module.exports = ({ develop }) => ({
+  mode: develop ? 'development' : 'production',
   context: path.resolve(__dirname, 'src'),
   entry: './main.js',
   output: {
@@ -29,6 +36,10 @@ const config = {
   },
   module: {
     rules: [
+      {
+        test: /\.html$/i,
+        loader: 'html-loader',
+      },
       {
         test: /\.js$/,
         use: 'babel-loader',
@@ -72,12 +83,22 @@ const config = {
     }),
     new CopyPlugin({
       patterns: [
-        { from: path.resolve(__dirname, 'src/assets'), to: path.resolve(__dirname, 'dist') },
-        { from: path.resolve(__dirname, 'src/img'), to: path.resolve(__dirname, 'dist/img') }
+        {
+          from: path.resolve(__dirname, 'src/assets'),
+          to: path.resolve(__dirname, 'dist')
+        }
       ]
     }),
-    new ESLintPlugin({extensions: ['js']})
+    new ImageminPlugin({
+      plugins: [
+        imageminMozjpeg({
+          quality: 90,
+          progressive: true
+        })
+      ]
+    }),
+    ...lintPlugin(develop)
   ]
-}
+});
 
-module.exports = config
+
