@@ -8,11 +8,11 @@
   "license": "ISC",
   "scripts": {
     "dev": "webpack --mode development",
-    "prod": "webpack --mode production",
+    "prod": "webpack",
     "serv": "webpack server --mode development",
     "deploy": "gh-pages -d dist",
     "lint": "eslint src",
-    "Slint": "stylelint **.scss"
+    "fix": "eslint --fix"
   },
   "dependencies": {},
   "devDependencies": {
