@@ -11,7 +11,7 @@
   ],
   "rules": {
     "prettier/prettier": ["error", { "endOfLine":"auto" }],
-    "linebreak-style": ["error", "windows"],
+    "linebreak-style": "warn",
     "no-unused-vars": "warn",
     "no-console": "warn",
     "max-len": ["warn",{"code": 120}]
