@@ -1,33 +1,33 @@
-function openActiveElement(trig) {
-  const tabs = [...document.querySelectorAll('[data-trigger]')];
-  const section = [...document.querySelectorAll('[data-content]')];
-  const sectionActiveClass = 'main-nav__section_active';
-  const itemActiveClass = 'main-nav__item_active';
-  tabs.forEach((tab, i) => {
-    if (tab.dataset.trigger !== trig) {
-      if (tab.classList.contains(itemActiveClass)) {
-        tab.classList.remove(itemActiveClass);
-        section[i].classList.remove(sectionActiveClass);
-      }
+const section = document.querySelectorAll('.js-section');
+const sectionArray = Array.prototype.slice.call(section);
+const tabsButton = document.querySelectorAll('.js-tabs');
+const tabsButtonArray = Array.prototype.slice.call(tabsButton);
+function openActiveElement(tab) {
+  tabsButtonArray.forEach((currentTab) => {
+    if (currentTab === tab) {
+      currentTab.classList.add('main-nav__item_active');
+      window.location.hash = tab.dataset.trigger;
     } else {
-      tab.classList.add(itemActiveClass);
-      section[i].classList.add(sectionActiveClass);
-      window.location.hash = trig;
+      currentTab.classList.remove('main-nav__item_active');
+    }
+  });
+  sectionArray.forEach((currentSection) => {
+    if (tab.dataset.trigger === currentSection.dataset.content) {
+      currentSection.classList.add('main-nav__section_active');
+    } else {
+      currentSection.classList.remove('main-nav__section_active');
     }
   });
 }
+tabsButtonArray.forEach((tab) => {
+  tab.addEventListener('click', (e) => {
+    e.preventDefault();
+    openActiveElement(tab);
+  });
+});
 
 if (window.location.hash) {
   const elem = window.location.hash;
   const triggerElement = elem.slice(1);
-  openActiveElement(triggerElement);
+  openActiveElement(document.querySelector(`[data-trigger = ${triggerElement}]`));
 }
-
-const tabsButton = document.querySelectorAll('.js-tabs');
-tabsButton.forEach((tab) => {
-  tab.addEventListener('click', (e) => {
-    e.preventDefault();
-    const currentTrigger = e.target.closest('.js-tabs').dataset.trigger;
-    openActiveElement(currentTrigger);
-  });
-});
