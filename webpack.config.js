@@ -3,7 +3,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const PrettierPlugin = require('prettier-webpack-plugin');
@@ -17,7 +16,8 @@ const lintPlugin = (isDev) => isDev ? [] : [new ESLintPlugin({ extensions: ['js'
   new PrettierPlugin(),];
 
 module.exports = ({ develop }) => ({
-  mode: develop ? 'development' : 'production',
+  mode: develop ? 'development' :  'production',
+  devtool: develop ? 'inline-source-map' : false,
   context: path.resolve(__dirname, 'src'),
   entry: './main.js',
   output: {
@@ -81,14 +81,6 @@ module.exports = ({ develop }) => ({
     new MiniCssExtractPlugin({
       filename: `${filename('css')}`
     }),
-    new CopyPlugin({
-      patterns: [
-        {
-          from: path.resolve(__dirname, 'src/assets'),
-          to: path.resolve(__dirname, 'dist')
-        }
-      ]
-    }),
     new ImageminPlugin({
       plugins: [
         imageminMozjpeg({
@@ -100,5 +92,3 @@ module.exports = ({ develop }) => ({
     ...lintPlugin(develop)
   ]
 });
-
-
