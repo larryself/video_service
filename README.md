@@ -1,6 +1,6 @@
 ## Pages 
 
-https://larryself.github.io/wp/
+https://larryself.github.io/video_service/
 
 ## Development
 
